@@ -72,7 +72,7 @@ clear
 echo -n $green"file name »» "
 read b
 echo
-toilet -f big -F gay $b
+figlet '$b' | lolcat
 echo
 toilet -f big -F gay LINK
 toilet -f big -F gay TARGET
@@ -83,7 +83,7 @@ echo
 echo -n $white"TARGET LINK »» "$cyan
 read bb
 echo
-toilet -f big -F gay $bb
+figlet '$bb' | lolcat
 echo
 echo "1. contine " | lolcat
 echo
