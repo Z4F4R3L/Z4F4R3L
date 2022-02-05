@@ -6,6 +6,10 @@ cyan='\033[36;1m'
 red='\033[31;1m'
 white='\033[37;1m'
 yellow='\033[33;1m'
+echo $green'Installing'
+pkg install figlet && pkg install curl && pkg install libcurl && pkg install ruby
+gem install lolcat
+clear
 echo $white"sedang mengetik"
 
 echo '
