@@ -6,13 +6,8 @@ cyan='\033[36;1m'
 red='\033[31;1m'
 white='\033[37;1m'
 yellow='\033[33;1m'
-echo $green'Installing'
-pkg install figlet && pkg install curl && pkg install libcurl && pkg install ruby
-gem install lolcat
-clear
-echo $white"Loading"
+run='echo $white"Loading"
 sleep 1
-
 echo '
                 ,’\   |\
                / /.:  ::
@@ -43,7 +38,6 @@ echo '
                \’\(`.\ `._ `-..___..-’,’
                   `’      ``-..___..-
 ' | lolcat
-
 trap ctrl_c INT
 ctrl_c() {
 clear
@@ -65,14 +59,13 @@ echo $green"↙️««️"
 echo $green"⬇️"
 echo -n $green"↘️➡️➡️➡️➡ »️️ " $blue
 read a
-
 if [ $a = 1 ] || [ $a = 1 ]
 then
 clear
 echo -n $green"file name »» "
 read b
 echo
-figlet '$b' | lolcat
+figlet $b | lolcat
 echo
 toilet -f big -F gay LINK
 toilet -f big -F gay TARGET
@@ -83,7 +76,7 @@ echo
 echo -n $white"TARGET LINK »» "$cyan
 read bb
 echo
-figlet '$bb' | lolcat
+figlet $bb | lolcat
 echo
 echo "1. contine " | lolcat
 echo
@@ -122,9 +115,31 @@ then
 ctrl_c
 fi
 fi
-
 if [ $a = 0 ] || [ $a = 0 ]
 then
 ctrl_c
 exit
+fi'
+
+echo '1.run' | lolcat
+echo
+echo '2.install and run' | lolcat
+echo
+echo -n ' »» ' | lolcat $green
+read abc
+if [ $abc = 1 ] || [ $abc = 1 ]
+then
+$run
+fi
+if [ $abc = 2 ] || [ $abc = 2]
+then
+echo $green'Installing'
+pkg update && upgrade
+pkg install figlet
+pkg install curl
+pkg install libcurl
+pkg install ruby
+gem install lolcat
+clear
+$run
 fi
